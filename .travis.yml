@@ -2,10 +2,9 @@ language: node_js
 node_js:
   - "stable"
 cache:
-  directories:
-  - node_modules
+  yarn
 script:
-  - npm test
-  - npm run build
+  - yarn test
+  - yarn build
 before_install:
   - cd src

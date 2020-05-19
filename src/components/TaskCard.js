@@ -197,7 +197,7 @@ const TaskCard = (props) => {
             Cancel
           </Button>
           <Button className={classes.button} onClick={()=>{ handleClose(); addToCart()} } autoFocus>
-            Accept Task
+            Accept This Task
           </Button>
         </DialogActions>
       </Dialog>

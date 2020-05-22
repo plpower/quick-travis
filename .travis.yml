@@ -5,9 +5,10 @@ cache:
   directories:
   - node_modules
 script:
+  - yarn test
   - yarn build
 before_install:
   - cd src
-# after_success:
-#   - npm install -g firebase-tools
-#   - firebase deploy --token $FIREBASE_TOKEN --non-interactive
+after_success:
+  - npm install -g firebase-tools
+  - firebase deploy --token $FIREBASE_TOKEN --non-interactive

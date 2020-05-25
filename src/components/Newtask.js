@@ -276,7 +276,7 @@ return (
         <Typography className="dialog-header" fontWeight={700} variant="h4">
             Please fill this form for your grocery run
         </Typography>
-      <Typography key={s} className="dialog-header" fontWeight={400} variant="subtitle">
+      <Typography className="dialog-header" fontWeight={400} variant="subtitle">
             It only takes 2 minutes!
         </Typography>
       <DialogContent>

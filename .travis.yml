@@ -5,7 +5,7 @@ cache:
   directories:
   - node_modules
 script:
-  - CI=false yarn build
+  - npm run build
 before_install:
   - cd src
 after_success:

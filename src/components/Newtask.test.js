@@ -8,8 +8,9 @@ test('submit form', async () => {
     const handleClose = () => {
         setOpen(false);
     };
+    const values = { title: 'I need groceries', author: 'Patrice', description: 'Eggs please', date: new Date(), items: [{ name: "eggs", quantity: "1" }], address: '805 Commonwealth Ave', city: 'Newton', state: 'MA' }
 
-    const { findByText, getByTestId } = render(<Newtask userid={userid} handleClose={handleClose} />)
+    const { findByText, getByTestId } = render(<Newtask userid={userid} handleClose={handleClose} values={values} />)
 
     const header = await findByText("It only takes 2 minutes!")
     expect(header).toBeInTheDocument()

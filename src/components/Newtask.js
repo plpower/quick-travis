@@ -65,7 +65,7 @@ const stateDropdownStyles = makeStyles(theme => ({
 }));
 
 // ------- NEWTASK FORM COMPONENT --------
-const Newtask = ({handleclose, userid}) => {
+const Newtask = ({handleclose, userid, values}) => {
   const [inputList, setInputList] = useState({ item: '', quantity: ''});
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -108,7 +108,7 @@ const Newtask = ({handleclose, userid}) => {
       return
     }
   };
-  const {handleTextChange, handleItemsChange, addNewItem, deleteNewItem, handleDateChange2, handleSubmit, values, errors} = useForm(submit, validateForm);
+  const {handleTextChange, handleItemsChange, addNewItem, deleteNewItem, handleDateChange2, handleSubmit, errors} = useForm(submit, validateForm);
 
   // ----- CITY DROPDOWN FIELD COMPONENT ------
   const CitySelect = ({}) => {

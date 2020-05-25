@@ -89,7 +89,7 @@ const useForm = (callback, validateForm) =>{
         addNewItem,
         deleteNewItem,
         handleSubmit,
-        values,
+        // values,
         errors
       };
 };

@@ -5,16 +5,15 @@ import Newtask from "./Newtask";
 test('submit form', async () => {
 
     const userid = 10;
-    // const professor = { Name: "Chris Riesbeck", Courses: ["Agile Methodology"] };
     const handleClose = () => {
         setOpen(false);
     };
 
-    const { getByTestId } = render(<Newtask userid={userid} handleClose={handleClose} />)
+    const { findByText, getByTestId } = render(<Newtask userid={userid} handleClose={handleClose} />)
 
-    // const item = await findByText("xqv6932")
-    // expect(item).toBeInTheDocument()
+    const header = await findByText("It only takes 2 minutes!")
+    expect(header).toBeInTheDocument()
 
-    const table = await getByTestId("");
-    expect(table).toBeInTheDocument()
+    const title = await getByTestId("");
+    expect(title).toBeInTheDocument()
 })

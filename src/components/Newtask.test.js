@@ -15,6 +15,6 @@ test('submit form', async () => {
     const header = await findByText("It only takes 2 minutes!")
     expect(header).toBeInTheDocument()
 
-    const title = await getByTestId("");
+    const title = await getByTestId("I need groceries");
     expect(title).toBeInTheDocument()
 })

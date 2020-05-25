@@ -1,14 +1,18 @@
 language: node_js
 node_js:
-  - "stable"
+  - "13.12.0"
 cache:
   directories:
-  - node_modules
+    - node_modules
 script:
-  # - yarn test
-  - yarn run build
-before_install:
-  - cd src
+  - npm test
+  - CI=false npm run build
+notifications:
+  email:
+    recipients:
+      - brianssui@yahoo.com
+    on_success: always
+    on_failure: always
 after_success:
-  - yarn add -g firebase-tools
+  - npm install -g firebase-tools
   - firebase deploy --token $FIREBASE_TOKEN --non-interactive

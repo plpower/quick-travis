@@ -65,7 +65,7 @@ const stateDropdownStyles = makeStyles(theme => ({
 }));
 
 // ------- NEWTASK FORM COMPONENT --------
-const Newtask = ({handleclose, user}) => {
+const Newtask = ({handleclose, userid}) => {
   const [inputList, setInputList] = useState({ item: '', quantity: ''});
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -251,7 +251,7 @@ const Newtask = ({handleclose, user}) => {
         title: values.title,
         items: values.items,
         author: values.author,
-        authorid: user.uid,
+        authorid: userid,
         description: values.description,
         completeBy: selectedDate.toString(),
         milliseconds: selectedDate.valueOf(),
@@ -261,7 +261,7 @@ const Newtask = ({handleclose, user}) => {
         acceptedBy: null,
         acceptedByEmail: null,
       })
-      db.child('users/' + user.uid + '/posted_tasks/' + taskId).set('unstarted');
+      db.child('users/' + userid + '/posted_tasks/' + taskId).set('unstarted');
       handleclose();
     }
   }
@@ -282,6 +282,7 @@ return (
       <DialogContent>
       <div>
         <TextField
+          data-testid={values.title}
           className="new-task-field"
           id="standard-basic"
           label="Title"
